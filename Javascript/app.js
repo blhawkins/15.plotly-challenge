@@ -7,7 +7,7 @@ window.onload = function patientListFun() {
                 patient.property('value', index)
         });
     });
-    createGraphics(0)
+    createGraphics(Math.floor(Math.random() * 152))
 };
     //https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload
 
@@ -50,6 +50,27 @@ function createGraphics(index) {
     Plotly.newPlot("bar", topTenData, layout);
 
     //Here is the code for building the Demographic Info table
+    var demographicsTable = d3.select('#sample-metadata')
+    var patientDemographics = importedData['metadata'][index]
+    var row = demographicsTable.append('p')
+        row.text(`Patient ID: ${patientDemographics['id']}`)
+    var row = demographicsTable.append('p')
+        row.text(`Patient Ethnicity: ${patientDemographics['ethnicity']}`)
+    var row = demographicsTable.append('p')
+        row.text(`Patient Gender: ${patientDemographics['gender']}`)
+    var row = demographicsTable.append('p')
+        row.text(`Patient Age: ${patientDemographics['age']}`)
+    var row = demographicsTable.append('p')
+        row.text(`Patient Location: ${patientDemographics['location']}`)
+    var row = demographicsTable.append('p')
+        row.text(`Belly Button Type: ${patientDemographics['bbtype']}`)
+    var row = demographicsTable.append('p')
+        row.text(`Wash Frequency: ${patientDemographics['wfreq']}`)
+    // patientDemographics.forEach((element, index) => {
+    //     var row = demographicsTable.append('ul')
+    //     row.text(`${index}: ${element}`)
+    // });
+    
     //This is for the table from 14.3.5 Bonus
     // Object.entries(frequencyCounts).forEach(([key, value]) => {
     //     var li = output.append("li").text(`${key}: ${value}`);
