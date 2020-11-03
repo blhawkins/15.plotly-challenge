@@ -7,6 +7,7 @@ University of Kansas Data Analytics Bootcamp Assignment 15
 
 # Tools Used:
     Javascript
+    Plotly.js
     D3.js
     HTML
 
