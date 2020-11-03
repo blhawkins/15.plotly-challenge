@@ -1,17 +1,28 @@
-d3.json('Data/samples.json').then((importedData) => {
-    //console.log(data)
-    testID = '940'
-    var sampleData = importedData['samples'][0] //??How do I call for a particular entry in the array of patients
+window.onload = function patientListFun() {
+    var patientDropDown = d3.select('#selDataset')
+    d3.json('Data/samples.json').then((importedData) => {
+        importedData['names'].forEach((element, index) => {
+                var patient = patientDropDown.append('option')
+                patient.text(`Patient ${element}`)
+                patient.property('value', index)
+        });
+    });
+    createGraphics(0)
+};
+    //https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload
+
+
+
+function createGraphics(index) {
+    d3.json('Data/samples.json').then((importedData) => {
+    var sampleData = importedData['samples'][index] //??How do I call for a particular entry in the array of patients
     console.log(sampleData);
-    topTenIDs = sampleData['otu_ids'].slice(0,10)
+    topTenIDs = sampleData['otu_ids'].slice(0,10).reverse()
         for (var i = 0; i <= topTenIDs.length -1; i++){
             topTenIDs[i] = 'OTU ' + topTenIDs[i];
         }
-        topTenIDs = topTenIDs.reverse()
-    topTenSampleValues = sampleData['sample_values'].slice(0,10)
-        topTenSampleValues = topTenSampleValues.reverse()
-    topTenLabels = sampleData['otu_labels'].slice(0,10)
-        topTenLabels = topTenLabels.reverse()
+    topTenSampleValues = sampleData['sample_values'].slice(0,10).reverse()
+    topTenLabels = sampleData['otu_labels'].slice(0,10).reverse()
     console.log(topTenIDs)
     console.log(topTenSampleValues)
     console.log(topTenLabels)
@@ -26,13 +37,30 @@ d3.json('Data/samples.json').then((importedData) => {
 
     var topTenData = [trace1];
 
-    Plotly.newPlot("bar", topTenData);
-});
+    var layout = {
+        title: "Top 10 OTUs",
+        margin: {
+          l: 100,
+          r: 100,
+          t: 25,
+          b: 100
+        }
+      };
 
-//How to search for a particular person?
-//Is there a way to join dictionary entries?
+    Plotly.newPlot("bar", topTenData, layout);
 
-//This is for the table from 14.3.5 Bonus
-// Object.entries(frequencyCounts).forEach(([key, value]) => {
-//     var li = output.append("li").text(`${key}: ${value}`);
-//   });
+    //Here is the code for building the Demographic Info table
+    //This is for the table from 14.3.5 Bonus
+    // Object.entries(frequencyCounts).forEach(([key, value]) => {
+    //     var li = output.append("li").text(`${key}: ${value}`);
+    //   });
+
+    //Here is the code for the Bubble Chart.
+
+    });
+}
+
+
+
+
+
