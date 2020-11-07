@@ -11,7 +11,7 @@ window.onload = function patientListFun() {
         });
     });
     //Initialize the webpage's graphics with a random patient
-    createGraphics(Math.floor(Math.random() * 152));
+    createGraphicsFun(Math.floor(Math.random() * 152));
 };
 
 
@@ -83,15 +83,16 @@ function createGraphicsFun(index) {
     //-----------------------------------------
 
     //Select the #bubble id from the index.html file
-    var bubbleChart = d3.select('#bubble')
+    //var bubbleChart = d3.select('#bubble')
 
     //----------Wash Frequency Gauge Chart----------
     //----------------------------------------------
 
     //Select the #gauge id from the index.html file
-    var gaugeChart = d3.select('#gauge')
+    //var gaugeChart = d3.select('#gauge')
     });
 };
+
 
 //----------Dataset Selection----------
 //-------------------------------------
@@ -99,3 +100,4 @@ function createGraphicsFun(index) {
 //Look for an onchange in the notes for the creation of this
 // Call updatePlotly() when a change takes place to the DOM
 //d3.selectAll("#selDataset").on("change", updatePlotly);
+
