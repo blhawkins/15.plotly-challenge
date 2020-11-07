@@ -16,7 +16,7 @@ window.onload = function patientListFun() {
 
 
 //This function creates the graphics shown on the webpage
-function createGraphics(index) {
+function createGraphicsFun(index) {
     //Read the samples.json file and save it as the importedData object
     d3.json('Data/samples.json').then((importedData) => {
 
@@ -93,12 +93,9 @@ function createGraphics(index) {
     });
 };
 
-//This function updates the visualizations to display records cooresponding to the user-inputted index
-function updateVisualizations() {
-    //do I need this???????
-}
-
 //----------Dataset Selection----------
 //-------------------------------------
 
 //Look for an onchange in the notes for the creation of this
+// Call updatePlotly() when a change takes place to the DOM
+//d3.selectAll("#selDataset").on("change", updatePlotly);
