@@ -15,7 +15,7 @@ University of Kansas Data Analytics Bootcamp Assignment 15
 
 # Description:
 
-The purpose of this project is to develop a Javascript program, ([app.js](https://github.com/blhawkins/15.plotly-challenge/blob/main/Javascript/app.js)) that explores the various visualizations that can be formed with the Plotly.js library. The program is supported by the Belly Button Biodiversity dataset that is found in the [samples.json](https://github.com/blhawkins/15.plotly-challenge/blob/main/Data/samples.json) file and the HTML template [index.html](https://github.com/blhawkins/15.plotly-challenge/blob/main/index.html). The resultant webpage is deployed [here](https://blhawkins.github.io/15.plotly-challenge/).
+The purpose of this project is to develop a Javascript program, ([app.js](https://github.com/blhawkins/15.plotly-challenge/blob/main/Javascript/app.js)) that explores the various visualizations that can be formed with the Plotly.js library. The program is supported by an HTML template ([index.html](https://github.com/blhawkins/15.plotly-challenge/blob/main/index.html)) and the Belly Button Biodiversity dataset ([samples.json](https://github.com/blhawkins/15.plotly-challenge/blob/main/Data/samples.json)). The resultant webpage is deployed [here](https://blhawkins.github.io/15.plotly-challenge/).
 
 ### [App.js](https://github.com/blhawkins/15.plotly-challenge/blob/main/Javascript/app.js)
 Components of the app.js file include:
