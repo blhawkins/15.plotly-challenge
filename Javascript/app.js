@@ -1,3 +1,6 @@
+//----------Initialization of Webpage----------
+//---------------------------------------------
+
 //This function runs when the page first loads (https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload)
 window.onload = function patientListFun() {
     //Select the 'Select dataset' dropdown
@@ -14,6 +17,8 @@ window.onload = function patientListFun() {
     createGraphicsFun(Math.floor(Math.random() * 152));
 };
 
+//----------Creation of Visualizations----------
+//----------------------------------------------
 
 //This function creates the graphics shown on the webpage
 function createGraphicsFun(index) {
@@ -142,24 +147,33 @@ function createGraphicsFun(index) {
             }
         }
     ];
-      
-        //Define the layout of the figure
-        var gaugeLayout = {
-            width: 600, 
-            height: 450, 
-            margin: { t: 0, b: 0 },
-        };
-
-        //Create the figure at the 'gauge' tag
-      Plotly.newPlot('gauge', gaugeData, gaugeLayout);
+    //Define the layout of the figure
+    var gaugeLayout = {
+        width: 600, 
+        height: 450, 
+        margin: { t: 0, b: 0 },
+    };
+    //Create the figure at the 'gauge' tag
+    Plotly.newPlot('gauge', gaugeData, gaugeLayout);
     });
 };
 
+//----------Update Visualizations----------
+//-----------------------------------------
+function updateGraphicsFun() {
+    //Use D3 to select the dropdown menu
+    var dropdownMenu = d3.select('#selDataset');
+    //Assign the value of the dropdown menu option to a variable patientIndex
+    var patientIndex = dropdownMenu.property("value");
+    //Clear the Patient Demographics table in preparation for new values to be printed
+    var demographicsTable = d3.select('#sample-metadata');
+    demographicsTable.html('')
+    //Call the createGraphicsFun and input the desired patientIndex
+    createGraphicsFun(patientIndex)
+};
 
 //----------Dataset Selection----------
 //-------------------------------------
 
-//Look for an onchange in the notes for the creation of this
 // Call updatePlotly() when a change takes place to the DOM
-//d3.selectAll("#selDataset").on("change", updatePlotly);
-
+d3.selectAll("#selDataset").on("change", updateGraphicsFun);
