@@ -48,13 +48,45 @@ function createGraphicsFun(index) {
         title: "Top 10 OTUs",
         margin: {
           l: 100,
-          r: 100,
+          r: 25,
           t: 25,
           b: 100
-        }
+        },
+        xaxis: {title: "Species Prevalence"},
       };
     //Create the figure at the 'bar' tag
     Plotly.newPlot("bar", otuData, otuLayout);
+
+    //----------Bubble Chart Creation----------
+    //-----------------------------------------
+
+    //Create a trace for the figure - https://plotly.com/javascript/bubble-charts/
+    var bubbleTrace = {
+        x: sampleData['otu_ids'],
+        y: sampleData['sample_values'],
+        mode: 'markers',
+        marker: {
+            size: sampleData['sample_values'],
+            color: sampleData['otu_ids']
+        },
+        text: sampleData['otu_labels']
+    };
+    //Define the data for the figure
+    var bubbleData = [bubbleTrace];
+    //Define the layout of the figure
+    var bubbleLayout = {
+        title: "Species Biodiversity",
+        margin: {
+          l: 100,
+          r: 100,
+          t: 25,
+          b: 100
+        },
+        xaxis: {title: "OTU ID"},
+        yaxis: {title: "Species Prevalence"}
+    };
+    //Create the figure at the 'bubble' tag
+    Plotly.newPlot('bubble', bubbleData, bubbleLayout);
 
     //----------Demographic Info Table Creation----------
     //---------------------------------------------------
@@ -79,17 +111,47 @@ function createGraphicsFun(index) {
     var row = demographicsTable.append('p');
         row.text(`Wash Frequency: ${patientDemographics['wfreq']}`);
 
-    //----------Bubble Chart Creation----------
-    //-----------------------------------------
-
-    //Select the #bubble id from the index.html file
-    //var bubbleChart = d3.select('#bubble')
-
     //----------Wash Frequency Gauge Chart----------
     //----------------------------------------------
 
-    //Select the #gauge id from the index.html file
-    //var gaugeChart = d3.select('#gauge')
+    //Define the data for the figure - https://plotly.com/javascript/gauge-charts/
+    var gaugeData = [
+        {
+            domain: {x: [0, 1], y: [0, 1]},
+            value: patientDemographics['wfreq'],
+            title: {text: "Belly Button Scrubs Per Week"},
+            type: "indicator",
+            mode: "gauge+number",
+            gauge: {
+                axis: {range: [0, 9]},
+                steps: [
+                    {range: [0, 1], color: "F8F1E9"},
+                    {range: [1, 2], color: "F3EFE1"},
+                    {range: [2, 3], color: "E7E3C2"},
+                    {range: [3, 4], color: "E2E5A8"},
+                    {range: [4, 5], color: "CFE38F"},
+                    {range: [5, 6], color: "ADC785"},
+                    {range: [6, 7], color: "7CBA7B"},
+                    {range: [7, 8], color: "79B583"},
+                    {range: [8, 9], color: "75AD7E"},
+                ],
+                threshold: {
+                    line: {color: "7D0004", width:4},
+                    value: patientDemographics['wfreq']
+                },
+            }
+        }
+    ];
+      
+        //Define the layout of the figure
+        var gaugeLayout = {
+            width: 600, 
+            height: 450, 
+            margin: { t: 0, b: 0 },
+        };
+
+        //Create the figure at the 'gauge' tag
+      Plotly.newPlot('gauge', gaugeData, gaugeLayout);
     });
 };
 
