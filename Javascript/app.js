@@ -1,7 +1,9 @@
-//----------Initialization of Webpage----------
-//---------------------------------------------
+//----------Definition of Functions----------
 
-//This function runs when the page first loads (https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload)
+//----------Function: Initialization of Webpage----------
+//-------------------------------------------------------
+
+//This function runs when the page first loads and populates the dropdown menu and initializes the graphics (https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload)
 window.onload = function patientListFun() {
     //Select the 'Select dataset' dropdown
     var patientDropDown = d3.select('#selDataset');
@@ -17,8 +19,8 @@ window.onload = function patientListFun() {
     createGraphicsFun(Math.floor(Math.random() * 152));
 };
 
-//----------Creation of Visualizations----------
-//----------------------------------------------
+//----------Function: Creation of Visualizations----------
+//--------------------------------------------------------
 
 //This function creates the graphics shown on the webpage
 function createGraphicsFun(index) {
@@ -26,7 +28,6 @@ function createGraphicsFun(index) {
     d3.json('Data/samples.json').then((importedData) => {
 
     //----------Top 10 OTUs Table Creation----------
-    //----------------------------------------------
 
     //Create a new sampleData object to hold the samples portion from the importedData object, for a requested index value
     var sampleData = importedData['samples'][index];
@@ -63,7 +64,6 @@ function createGraphicsFun(index) {
     Plotly.newPlot("bar", otuData, otuLayout);
 
     //----------Bubble Chart Creation----------
-    //-----------------------------------------
 
     //Create a trace for the figure - https://plotly.com/javascript/bubble-charts/
     var bubbleTrace = {
@@ -94,7 +94,6 @@ function createGraphicsFun(index) {
     Plotly.newPlot('bubble', bubbleData, bubbleLayout);
 
     //----------Demographic Info Table Creation----------
-    //---------------------------------------------------
 
     //Select the #sample-metadata id from the index.html file
     var demographicsTable = d3.select('#sample-metadata');
@@ -117,7 +116,6 @@ function createGraphicsFun(index) {
         row.text(`Wash Frequency: ${patientDemographics['wfreq']}`);
 
     //----------Wash Frequency Gauge Chart----------
-    //----------------------------------------------
 
     //Define the data for the figure - https://plotly.com/javascript/gauge-charts/
     var gaugeData = [
@@ -158,8 +156,10 @@ function createGraphicsFun(index) {
     });
 };
 
-//----------Update Visualizations----------
-//-----------------------------------------
+//----------Function: Updating of Visualizations----------
+//--------------------------------------------------------
+
+//This function updates the visualizations according to the Patient ID chosen from the dropdown menu
 function updateGraphicsFun() {
     //Use D3 to select the dropdown menu
     var dropdownMenu = d3.select('#selDataset');
