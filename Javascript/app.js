@@ -58,7 +58,7 @@ function createGraphicsFun(index) {
           t: 25,
           b: 100
         },
-        xaxis: {title: "Species Prevalence"},
+        xaxis: {title: "OTU Prevalence"},
       };
     //Create the figure at the 'bar' tag
     Plotly.newPlot("bar", otuData, otuLayout);
@@ -88,7 +88,7 @@ function createGraphicsFun(index) {
           b: 100
         },
         xaxis: {title: "OTU ID"},
-        yaxis: {title: "Species Prevalence"}
+        yaxis: {title: "OTU Prevalence"}
     };
     //Create the figure at the 'bubble' tag
     Plotly.newPlot('bubble', bubbleData, bubbleLayout);
