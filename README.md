@@ -15,9 +15,9 @@ University of Kansas Data Analytics Bootcamp Assignment 15
 
 # Description:
 
-The purpose of this project is to develop a Javascript program, ([app.js](https://github.com/blhawkins/15.plotly-challenge/blob/main/Javascript/app.js)) that explores the various visualizations that can be formed with the Plotly.js library. The program is supported by an HTML template ([index.html](https://github.com/blhawkins/15.plotly-challenge/blob/main/index.html)) and the Belly Button Biodiversity dataset ([samples.json](https://github.com/blhawkins/15.plotly-challenge/blob/main/Data/samples.json)). The resultant webpage is deployed [here](https://blhawkins.github.io/15.plotly-challenge/).
+The purpose of this project is to develop a Javascript program, ([app.js](https://github.com/blhawkins/NavelFlora/blob/main/Javascript/app.js)) that explores the various visualizations that can be formed with the Plotly.js library. The program is supported by an HTML template ([index.html](https://github.com/blhawkins/NavelFlora/blob/main/index.html)) and the Belly Button Biodiversity dataset ([samples.json](https://github.com/blhawkins/NavelFlora/blob/main/Data/samples.json)). The resultant webpage is deployed [here](https://blhawkins.github.io/NavelFlora/).
 
-### [App.js](https://github.com/blhawkins/15.plotly-challenge/blob/main/Javascript/app.js)
+### [App.js](https://github.com/blhawkins/NavelFlora/blob/main/Javascript/app.js)
 Components of the app.js file include:
 1. Creation of a function that, upon start-up, populates the dropdown menu with all of the available datasets (Patient IDs). This function also uses a random number generator to initialize the webpage's graphics using data cooresponding to a random patient.
 2. Creation of a function that produces the following graphics:
@@ -31,5 +31,5 @@ Components of the app.js file include:
     
 
 #### Screen Captures:
-![alt text](https://github.com/blhawkins/15.plotly-challenge/blob/main/Screenshots/Screen_capture1.png 'Screenshot 1 [Top of webpage]')
-![alt text](https://github.com/blhawkins/15.plotly-challenge/blob/main/Screenshots/Screen_capture2.png 'Screenshot 2')
+![alt text](https://github.com/blhawkins/NavelFlora/blob/main/Screenshots/Screen_capture1.png 'Screenshot 1 [Top of webpage]')
+![alt text](https://github.com/blhawkins/NavelFlora/blob/main/Screenshots/Screen_capture2.png 'Screenshot 2')
