@@ -15,7 +15,7 @@
 
 # Description:
 
-The purpose of this project is to develop a Javascript program, ([app.js](https://github.com/blhawkins/NavelFlora/blob/main/Javascript/app.js)) that explores the various visualizations that can be formed with the Plotly.js library. The program is supported by an HTML template ([index.html](https://github.com/blhawkins/NavelFlora/blob/main/index.html)) and the Belly Button Biodiversity dataset ([samples.json](https://github.com/blhawkins/NavelFlora/blob/main/Data/samples.json)). The resultant webpage is deployed [here](https://blhawkins.github.io/NavelFlora/).
+The purpose of this project is to develop a Javascript program ([app.js](https://github.com/blhawkins/NavelFlora/blob/main/Javascript/app.js)) that explores the various visualizations that can be formed with the Plotly.js library. The program is supported by an HTML template ([index.html](https://github.com/blhawkins/NavelFlora/blob/main/index.html)) and the Belly Button Biodiversity dataset ([samples.json](https://github.com/blhawkins/NavelFlora/blob/main/Data/samples.json)). The resultant webpage is deployed [here](https://blhawkins.github.io/NavelFlora/).
 
 ### [App.js](https://github.com/blhawkins/NavelFlora/blob/main/Javascript/app.js)
 Components of the app.js file include:
