@@ -1,6 +1,6 @@
 # 15.plotly-challenge
 ### Belly Button Biodiversity 🦠🔬
-University of Kansas Data Analytics Bootcamp Assignment 15
+
 
 # Main Contents:
     app.js
